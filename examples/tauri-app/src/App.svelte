@@ -1,5 +1,5 @@
 <script lang="ts">
-import { BannerAd } from "tauri-plugin-admob-api";
+import { BannerAd, RewardedAd } from "tauri-plugin-admob-api";
 import Greet from "./lib/Greet.svelte";
 
 let response = "";
@@ -13,6 +13,19 @@ async function showBannerAd() {
 		await banner.load();
 	}
 	await banner.show();
+}
+async function showRewardedAd() {
+  try {
+	const rewardedAd = new RewardedAd({
+		adUnitId: "ca-app-pub-3940256099942544/5224354917",
+	});
+	if (!(await rewardedAd.isLoaded())) {
+		await rewardedAd.load();
+	}
+	await rewardedAd.show();
+  } catch(e) {
+    console.log(e);
+  }
 }
 </script>
 
@@ -39,8 +52,12 @@ async function showBannerAd() {
         <Greet/>
     </div>
 
-    <div>
+    <div class="row">
         <button on:click="{showBannerAd}">Show Banner Ad</button>
+        <div>{@html response}</div>
+    </div>
+    <div class="row">
+        <button on:click="{showRewardedAd}">Show Rewarded Ad</button>
         <div>{@html response}</div>
     </div>
 

@@ -1,4 +1,4 @@
- [package]
+[package]
 name = "tauri-plugin-admob"
 version = "0.0.4"
 authors = [ "Tauri plugin admob authors" ]

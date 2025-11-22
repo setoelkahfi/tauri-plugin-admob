@@ -1,4 +1,5 @@
 import { MobileAd, type MobileAdOptions } from "./common";
+import { addPluginListener, PluginListener } from "@tauri-apps/api/core";
 
 export class RewardedAd extends MobileAd<RewardedAdOptions> {
 	static cls = "RewardedAd";
@@ -14,6 +15,26 @@ export class RewardedAd extends MobileAd<RewardedAdOptions> {
 	async show() {
 		return super.show();
 	}
+
+	async onRewarded(
+	  handler: (payload: any) => void
+  ): Promise<PluginListener> {
+    return await addPluginListener(
+      'admob',
+      'rewarded/reward',
+      handler
+    );
+  }
+}
+
+export async function onRewarded(
+  handler: (payload: any) => void
+): Promise<PluginListener> {
+  return await addPluginListener(
+    'admob',
+    'rewarded/reward',
+    handler
+  );
 }
 
 export class RewardedInterstitialAd extends MobileAd<RewardedAdOptions> {
