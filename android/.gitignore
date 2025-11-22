@@ -1,2 +1,5 @@
 /build
 /.tauri
+
+# Android Studio
+*.properties

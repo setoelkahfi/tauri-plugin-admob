@@ -297,127 +297,152 @@
         {
           "description": "Enables the adCreate command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-adCreate"
+          "const": "allow-adCreate",
+          "markdownDescription": "Enables the adCreate command without any pre-configured scope."
         },
         {
           "description": "Denies the adCreate command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-adCreate"
+          "const": "deny-adCreate",
+          "markdownDescription": "Denies the adCreate command without any pre-configured scope."
         },
         {
           "description": "Enables the adHide command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-adHide"
+          "const": "allow-adHide",
+          "markdownDescription": "Enables the adHide command without any pre-configured scope."
         },
         {
           "description": "Denies the adHide command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-adHide"
+          "const": "deny-adHide",
+          "markdownDescription": "Denies the adHide command without any pre-configured scope."
         },
         {
           "description": "Enables the adIsLoaded command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-adIsLoaded"
+          "const": "allow-adIsLoaded",
+          "markdownDescription": "Enables the adIsLoaded command without any pre-configured scope."
         },
         {
           "description": "Denies the adIsLoaded command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-adIsLoaded"
+          "const": "deny-adIsLoaded",
+          "markdownDescription": "Denies the adIsLoaded command without any pre-configured scope."
         },
         {
           "description": "Enables the adLoad command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-adLoad"
+          "const": "allow-adLoad",
+          "markdownDescription": "Enables the adLoad command without any pre-configured scope."
         },
         {
           "description": "Denies the adLoad command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-adLoad"
+          "const": "deny-adLoad",
+          "markdownDescription": "Denies the adLoad command without any pre-configured scope."
         },
         {
           "description": "Enables the adShow command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-adShow"
+          "const": "allow-adShow",
+          "markdownDescription": "Enables the adShow command without any pre-configured scope."
         },
         {
           "description": "Denies the adShow command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-adShow"
+          "const": "deny-adShow",
+          "markdownDescription": "Denies the adShow command without any pre-configured scope."
         },
         {
           "description": "Enables the configRequest command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-configRequest"
+          "const": "allow-configRequest",
+          "markdownDescription": "Enables the configRequest command without any pre-configured scope."
         },
         {
           "description": "Denies the configRequest command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-configRequest"
+          "const": "deny-configRequest",
+          "markdownDescription": "Denies the configRequest command without any pre-configured scope."
         },
         {
           "description": "Enables the configure command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-configure"
+          "const": "allow-configure",
+          "markdownDescription": "Enables the configure command without any pre-configured scope."
         },
         {
           "description": "Denies the configure command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-configure"
+          "const": "deny-configure",
+          "markdownDescription": "Denies the configure command without any pre-configured scope."
         },
         {
           "description": "Enables the isPrivacyOptionsRequired command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-isPrivacyOptionsRequired"
+          "const": "allow-isPrivacyOptionsRequired",
+          "markdownDescription": "Enables the isPrivacyOptionsRequired command without any pre-configured scope."
         },
         {
           "description": "Denies the isPrivacyOptionsRequired command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-isPrivacyOptionsRequired"
+          "const": "deny-isPrivacyOptionsRequired",
+          "markdownDescription": "Denies the isPrivacyOptionsRequired command without any pre-configured scope."
         },
         {
           "description": "Enables the register_listener command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-register-listener"
+          "const": "allow-register-listener",
+          "markdownDescription": "Enables the register_listener command without any pre-configured scope."
         },
         {
           "description": "Denies the register_listener command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-register-listener"
+          "const": "deny-register-listener",
+          "markdownDescription": "Denies the register_listener command without any pre-configured scope."
         },
         {
           "description": "Enables the requestTrackingAuthorization command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-requestTrackingAuthorization"
+          "const": "allow-requestTrackingAuthorization",
+          "markdownDescription": "Enables the requestTrackingAuthorization command without any pre-configured scope."
         },
         {
           "description": "Denies the requestTrackingAuthorization command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-requestTrackingAuthorization"
+          "const": "deny-requestTrackingAuthorization",
+          "markdownDescription": "Denies the requestTrackingAuthorization command without any pre-configured scope."
         },
         {
           "description": "Enables the showPrivacyOptionsForm command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-showPrivacyOptionsForm"
+          "const": "allow-showPrivacyOptionsForm",
+          "markdownDescription": "Enables the showPrivacyOptionsForm command without any pre-configured scope."
         },
         {
           "description": "Denies the showPrivacyOptionsForm command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-showPrivacyOptionsForm"
+          "const": "deny-showPrivacyOptionsForm",
+          "markdownDescription": "Denies the showPrivacyOptionsForm command without any pre-configured scope."
         },
         {
           "description": "Enables the trackingAuthorizationStatus command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-trackingAuthorizationStatus"
+          "const": "allow-trackingAuthorizationStatus",
+          "markdownDescription": "Enables the trackingAuthorizationStatus command without any pre-configured scope."
         },
         {
           "description": "Denies the trackingAuthorizationStatus command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-trackingAuthorizationStatus"
+          "const": "deny-trackingAuthorizationStatus",
+          "markdownDescription": "Denies the trackingAuthorizationStatus command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin",
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-adCreate`\n- `allow-adHide`\n- `allow-adIsLoaded`\n- `allow-adLoad`\n- `allow-adShow`\n- `allow-configRequest`\n- `allow-configure`\n- `allow-requestTrackingAuthorization`\n- `allow-trackingAuthorizationStatus`\n- `allow-isPrivacyOptionsRequired`\n- `allow-showPrivacyOptionsForm`",
           "type": "string",
-          "const": "default"
+          "const": "default",
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-adCreate`\n- `allow-adHide`\n- `allow-adIsLoaded`\n- `allow-adLoad`\n- `allow-adShow`\n- `allow-configRequest`\n- `allow-configure`\n- `allow-requestTrackingAuthorization`\n- `allow-trackingAuthorizationStatus`\n- `allow-isPrivacyOptionsRequired`\n- `allow-showPrivacyOptionsForm`"
         }
       ]
     }
