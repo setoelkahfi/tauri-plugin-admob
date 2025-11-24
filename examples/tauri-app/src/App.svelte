@@ -12,10 +12,6 @@
         adUnitId: "ca-app-pub-3940256099942544/5224354917",
     });
 
-    async function showPrivacyForm() {
-      await showPrivacyOptionsForm()
-    }
-
     async function showBannerAd() {
         await bannerAd.show();
     }

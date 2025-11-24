@@ -4,7 +4,6 @@ Default permissions for the plugin
 
 #### This default permission set includes the following:
 
-- `allow-registerListener`
 - `allow-adCreate`
 - `allow-adHide`
 - `allow-adIsLoaded`
@@ -230,32 +229,6 @@ Enables the isPrivacyOptionsRequired command without any pre-configured scope.
 <td>
 
 Denies the isPrivacyOptionsRequired command without any pre-configured scope.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`admob:allow-registerListener`
-
-</td>
-<td>
-
-Enables the registerListener command without any pre-configured scope.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`admob:deny-registerListener`
-
-</td>
-<td>
-
-Denies the registerListener command without any pre-configured scope.
 
 </td>
 </tr>

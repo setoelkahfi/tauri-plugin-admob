@@ -391,18 +391,6 @@
           "markdownDescription": "Denies the isPrivacyOptionsRequired command without any pre-configured scope."
         },
         {
-          "description": "Enables the registerListener command without any pre-configured scope.",
-          "type": "string",
-          "const": "allow-registerListener",
-          "markdownDescription": "Enables the registerListener command without any pre-configured scope."
-        },
-        {
-          "description": "Denies the registerListener command without any pre-configured scope.",
-          "type": "string",
-          "const": "deny-registerListener",
-          "markdownDescription": "Denies the registerListener command without any pre-configured scope."
-        },
-        {
           "description": "Enables the register_listener command without any pre-configured scope.",
           "type": "string",
           "const": "allow-register-listener",
@@ -451,10 +439,10 @@
           "markdownDescription": "Denies the trackingAuthorizationStatus command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-registerListener`\n- `allow-adCreate`\n- `allow-adHide`\n- `allow-adIsLoaded`\n- `allow-adLoad`\n- `allow-adShow`\n- `allow-configRequest`\n- `allow-configure`\n- `allow-requestTrackingAuthorization`\n- `allow-trackingAuthorizationStatus`\n- `allow-isPrivacyOptionsRequired`\n- `allow-showPrivacyOptionsForm`",
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-adCreate`\n- `allow-adHide`\n- `allow-adIsLoaded`\n- `allow-adLoad`\n- `allow-adShow`\n- `allow-configRequest`\n- `allow-configure`\n- `allow-requestTrackingAuthorization`\n- `allow-trackingAuthorizationStatus`\n- `allow-isPrivacyOptionsRequired`\n- `allow-showPrivacyOptionsForm`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-registerListener`\n- `allow-adCreate`\n- `allow-adHide`\n- `allow-adIsLoaded`\n- `allow-adLoad`\n- `allow-adShow`\n- `allow-configRequest`\n- `allow-configure`\n- `allow-requestTrackingAuthorization`\n- `allow-trackingAuthorizationStatus`\n- `allow-isPrivacyOptionsRequired`\n- `allow-showPrivacyOptionsForm`"
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-adCreate`\n- `allow-adHide`\n- `allow-adIsLoaded`\n- `allow-adLoad`\n- `allow-adShow`\n- `allow-configRequest`\n- `allow-configure`\n- `allow-requestTrackingAuthorization`\n- `allow-trackingAuthorizationStatus`\n- `allow-isPrivacyOptionsRequired`\n- `allow-showPrivacyOptionsForm`"
         }
       ]
     }
