@@ -1,9 +1,7 @@
 <script lang="ts">
-    import { BannerAd, RewardedAd } from "tauri-plugin-admob-api";
+    import { BannerAd, RewardedAd, showPrivacyOptionsForm } from "tauri-plugin-admob-api";
     import Greet from "./lib/Greet.svelte";
     import { onMount } from "svelte";
-
-    let response = "";
 
     const bannerAd = new BannerAd({
         adUnitId: "ca-app-pub-3940256099942544/9214589741",
@@ -13,6 +11,10 @@
     const rewardedAd = new RewardedAd({
         adUnitId: "ca-app-pub-3940256099942544/5224354917",
     });
+
+    async function showPrivacyForm() {
+      await showPrivacyOptionsForm()
+    }
 
     async function showBannerAd() {
         await bannerAd.show();
@@ -62,12 +64,13 @@
     </div>
 
     <div class="row">
+        <button on:click={showPrivacyOptionsForm}>Show Privacy Form</button>
+    </div>
+    <div class="row">
         <button on:click={showBannerAd}>Show Banner Ad</button>
-        <div>{@html response}</div>
     </div>
     <div class="row">
         <button on:click={showRewardedAd}>Show Rewarded Ad</button>
-        <div>{@html response}</div>
     </div>
 </main>
 
