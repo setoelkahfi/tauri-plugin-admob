@@ -21,7 +21,7 @@
         try {
             await rewardedAd.show();
             const rewardPromise = await rewardedAd.onRewarded(async (reward) => {
-                console.log("RewardedAd get reward callback:", reward);
+                console.log("RewardedAd get reward callback:", JSON.stringify(reward));
             });
             console.log(rewardPromise.event);
         } catch (e) {
