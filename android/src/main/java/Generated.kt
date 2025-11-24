@@ -25,7 +25,7 @@ class Generated {
         const val REWARDED_IMPRESSION = "rewarded/impression"
         const val REWARDED_LOAD = "rewarded/load"
         const val REWARDED_LOAD_FAIL = "rewarded/load_fail"
-        const val REWARDED_REWARD = "rewarded/reward"
+        const val REWARDED_REWARD = "rewarded_reward"
         const val REWARDED_SHOW = "rewarded/show"
         const val REWARDED_SHOW_FAIL = "rewarded/show_fail"
     }

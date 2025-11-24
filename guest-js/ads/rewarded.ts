@@ -21,7 +21,7 @@ export class RewardedAd extends MobileAd<RewardedAdOptions> {
   ): Promise<PluginListener> {
     return await addPluginListener(
       'admob',
-      'rewarded/reward',
+      'rewarded_reward',
       handler
     );
   }
