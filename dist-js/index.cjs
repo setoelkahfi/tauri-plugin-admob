@@ -129,14 +129,8 @@ var RewardedAd = class extends MobileAd {
 	async show() {
 		return super.show();
 	}
-	async onRewarded(handler) {
-		return await (0, __tauri_apps_api_core.addPluginListener)("admob", "rewarded_reward", handler);
-	}
 };
 RewardedAd.cls = "RewardedAd";
-async function onRewarded(handler) {
-	return await (0, __tauri_apps_api_core.addPluginListener)("admob", "rewarded/reward", handler);
-}
 var RewardedInterstitialAd = class extends MobileAd {
 	isLoaded() {
 		return super.isLoaded();
@@ -157,5 +151,4 @@ exports.MobileAd = MobileAd;
 exports.RewardedAd = RewardedAd;
 exports.RewardedInterstitialAd = RewardedInterstitialAd;
 exports.isPrivacyOptionsRequired = isPrivacyOptionsRequired;
-exports.onRewarded = onRewarded;
 exports.showPrivacyOptionsForm = showPrivacyOptionsForm;

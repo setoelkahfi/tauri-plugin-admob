@@ -1,0 +1,8 @@
+{
+  "$schema": "../gen/schemas/android-schema.json",
+  "identifier": "android-capabilities",
+  "description": "Capabilities for the Android platform.",
+  "platforms": ["android"],
+  "windows": ["main"],
+  "permissions": ["admob:default"]
+}
