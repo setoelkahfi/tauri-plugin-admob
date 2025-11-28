@@ -1,4 +1,4 @@
-import { invoke } from "@tauri-apps/api/core";
+import { addPluginListener, invoke } from "@tauri-apps/api/core";
 
 //#region node_modules/.pnpm/@rollup+plugin-typescript@11.1.6_rollup@2.79.2_tslib@2.8.1_typescript@5.9.3/node_modules/tslib/tslib.es6.js
 function __classPrivateFieldGet(receiver, state, kind, f) {
@@ -129,8 +129,14 @@ var RewardedAd = class extends MobileAd {
 	async show() {
 		return super.show();
 	}
+	async onRewarded(handler) {
+		return await addPluginListener("admob", "rewarded_reward", handler);
+	}
 };
 RewardedAd.cls = "RewardedAd";
+async function onRewarded(handler) {
+	return await addPluginListener("admob", "rewarded/reward", handler);
+}
 var RewardedInterstitialAd = class extends MobileAd {
 	isLoaded() {
 		return super.isLoaded();
@@ -145,4 +151,4 @@ var RewardedInterstitialAd = class extends MobileAd {
 RewardedInterstitialAd.cls = "RewardedInterstitialAd";
 
 //#endregion
-export { BannerAd, InterstitialAd, MobileAd, RewardedAd, RewardedInterstitialAd, isPrivacyOptionsRequired, showPrivacyOptionsForm };
+export { BannerAd, InterstitialAd, MobileAd, RewardedAd, RewardedInterstitialAd, isPrivacyOptionsRequired, onRewarded, showPrivacyOptionsForm };
