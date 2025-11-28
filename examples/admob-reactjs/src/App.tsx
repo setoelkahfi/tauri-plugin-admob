@@ -1,16 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
+import {
+  BannerAd,
+  RewardedAd,
+  showPrivacyOptionsForm,
+} from "tauri-plugin-admob-api";
 import "./App.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const [bannerAd, setBannerAd] = useState<BannerAd>();
+  const [rewardedAd, setRewardedAd] = useState<RewardedAd>();
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
+  const showBannerAd = async () => {
+    await bannerAd?.show();
+  };
+
+  const showRewardedAd = async () => {
+    try {
+      await rewardedAd?.show();
+      const rewardPromise = await rewardedAd?.onRewarded(async (reward) => {
+        console.log("RewardedAd get reward callback:", JSON.stringify(reward));
+      });
+      console.log(rewardPromise?.event);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const loadAds = async () => {
+    const bannerAd = new BannerAd({
+      adUnitId: "ca-app-pub-3940256099942544/9214589741",
+      position: "top",
+    });
+
+    const rewardedAd = new RewardedAd({
+      adUnitId: "ca-app-pub-3940256099942544/5224354917",
+    });
+
+    await bannerAd.load();
+    await rewardedAd.load();
+
+    setBannerAd(bannerAd);
+    setRewardedAd(rewardedAd);
+  };
+
+  useEffect(() => {
+    loadAds();
+  });
 
   return (
     <main className="container">
@@ -29,21 +65,15 @@ function App() {
       </div>
       <p>Click on the Tauri, Vite, and React logos to learn more.</p>
 
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
+      <div className="row">
+        <button onClick={showPrivacyOptionsForm}>Show Privacy Form</button>
+      </div>
+      <div className="row">
+        <button onClick={showBannerAd}>Show Banner Ad</button>
+      </div>
+      <div className="row">
+        <button onClick={showRewardedAd}>Show Rewarded Ad</button>
+      </div>
     </main>
   );
 }
