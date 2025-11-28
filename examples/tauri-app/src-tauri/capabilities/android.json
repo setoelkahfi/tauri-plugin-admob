@@ -1,7 +1,8 @@
 {
   "$schema": "../gen/schemas/android-schema.json",
-  "identifier": "android-permission",
-  "description": "enables the Android permissions",
+  "identifier": "android-capabilities",
+  "description": "Capabilities for the Android platform.",
+  "platforms": ["android"],
   "windows": ["main"],
   "permissions": ["admob:default", "admob:allow-register-listener"]
 }
