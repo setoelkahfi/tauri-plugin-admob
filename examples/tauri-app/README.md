@@ -1,8 +1,7 @@
-# Svelte + Vite
+# Tauri Plugin AdMod Example
 
-This template should help get you started developing with Tauri and Svelte in Vite.
+This is an example app of Tauri plugin AdMob.
 
-## Recommended IDE Setup
+## Android XML
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
-
+Replace the `gen/android/app/src/main/AndroidManifest.xml` manifest with the one in the `gen-override`.

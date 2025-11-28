@@ -1,16 +1,10 @@
 <script lang="ts">
-import { BannerAd, InterstitialAd } from "tauri-plugin-admob-api";
+import { BannerAd } from "tauri-plugin-admob-api";
 import Greet from "./lib/Greet.svelte";
 
 let response = "";
 
-function updateResponse(returnValue) {
-	response += `[${new Date().toLocaleTimeString()}] ${
-		typeof returnValue === "string" ? returnValue : JSON.stringify(returnValue)
-	}<br>`;
-}
-
-async function _ping() {
+async function showBannerAd() {
 	const banner = new BannerAd({
 		adUnitId: "ca-app-pub-3940256099942544/9214589741",
 		position: "top",
@@ -46,7 +40,7 @@ async function _ping() {
     </div>
 
     <div>
-        <button on:click="{_ping}">Ping</button>
+        <button on:click="{showBannerAd}">Show Banner Ad</button>
         <div>{@html response}</div>
     </div>
 

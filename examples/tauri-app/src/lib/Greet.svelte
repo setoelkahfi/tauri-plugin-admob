@@ -1,7 +1,7 @@
 <script>
 import { invoke } from "@tauri-apps/api/core";
 
-const name = "";
+let name = "";
 let greetMsg = "";
 
 async function greet() {
@@ -19,4 +19,3 @@ async function greet() {
   </div>
   <p>{greetMsg}</p>
 </div>
-
