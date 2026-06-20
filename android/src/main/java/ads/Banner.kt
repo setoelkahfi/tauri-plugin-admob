@@ -18,16 +18,12 @@ import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 import java.util.Objects
+import androidx.core.view.isGone
 
 class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
-    private val adSize: AdSize
-    private val gravity: Int
+    private val adSize: AdSize = AdSize.SMART_BANNER
+    private val gravity: Int = if ("top" == ctx.optPosition()) Gravity.TOP else Gravity.BOTTOM
     private var adView: AdView? = null
-
-    init {
-        adSize = AdSize.SMART_BANNER
-        gravity = if ("top" == ctx.optPosition()) Gravity.TOP else Gravity.BOTTOM
-    }
 
     override val isLoaded: Boolean
         get() = adView != null
@@ -36,7 +32,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
         if (adView == null) {
             adView = AdView(activity)
             adView!!.adUnitId = adUnitId
-            adView!!.setAdSize(adSize)
+            adView!!.setAdSize(AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, 360))
             adView!!.adListener = object : AdListener() {
                 override fun onAdClicked() {
                     emit(Generated.Events.BANNER_CLICK)
@@ -64,7 +60,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
             }
         }
         adView!!.loadAd(ctx!!.optAdRequest())
-        ctx?.resolve()
+        ctx.resolve()
     }
 
     override fun show(ctx: Context?) {
@@ -72,7 +68,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
         val webView: WebView = ExecuteContext.Companion.plugin!!.webView!!
         if (getParentView(adView) == null) {
             addBannerView(ExecuteContext.Companion.plugin, adView)
-        } else if (adView!!.visibility == View.GONE) {
+        } else if (adView!!.isGone) {
             adView!!.resume()
             adView!!.visibility = View.VISIBLE
         } else {

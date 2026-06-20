@@ -13,7 +13,14 @@ pub fn run() {
 
     builder
         .invoke_handler(tauri::generate_handler![greet])
-        .plugin(tauri_plugin_admob::init())
+        .setup(|#[allow(unused)] app| {
+            // Android-only plugin.
+            #[cfg(target_os = "android")]
+            {
+                app.handle().plugin(tauri_plugin_admob::init())?;
+            }
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
